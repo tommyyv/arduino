@@ -1,0 +1,9 @@
+# [TESTING] Arduino AVR
+
+## ARCHITECTURE
+
+Refer to [ARCHITECTURE](ARCHITECTURE.md).
+
+## LICENSE
+
+Refer to [LICENSE](LICENSE).
