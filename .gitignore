@@ -1,2 +1,15 @@
-.venv
-venv
+.venv/
+venv/
+*.pyc
+__pycache__/
+
+.pio/
+
+.cache/
+.vscode/
+.idea/
+
+compile_commands.json
+
+.DS_Store
+Thumbs.db
