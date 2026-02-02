@@ -12,16 +12,16 @@ typedef struct {
   ((GPIO_Port *)0x23) // this just becomes (*(volatile uint8_t*)0x23), which can
                       // be ptr + 1 = next address
 
-void gpio_set(GPIO_Port *gpio, uint8_t pin) {
-  gpio->PORT |= (1 << pin);
+void gpio_set(GPIO_Port *gpio, uint8_t bit) {
+  gpio->PORT |= (1 << bit);
 } // port, pin; |= ()
 
-void gpio_clear(GPIO_Port *gpio, uint8_t pin) {
-  gpio->PORT &= ~(1 << pin);
+void gpio_clear(GPIO_Port *gpio, uint8_t bit) {
+  gpio->PORT &= ~(1 << bit);
 } // port, pin; &= ~
 
-void gpio_toggle(GPIO_Port *gpio, uint8_t pin) {
-  gpio->PORT ^= (1 << pin);
+void gpio_toggle(GPIO_Port *gpio, uint8_t bit) {
+  gpio->PORT ^= (1 << bit);
 } // port, pin; ^=
 
 int main(void) {
