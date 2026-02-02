@@ -24,11 +24,15 @@ void gpio_toggle(GPIO_Port *gpio, uint8_t bit) {
   gpio->PORT ^= (1 << bit);
 } // port, pin; ^=
 
+void delay() {
+  for (volatile uint32_t i = 0; i < 100000; i++)
+    ;
+}
+
 int main(void) {
-  GPIOB->DDR |= (1 << 5);
+  GPIOB->DDR |= (1 << 5); // set the 5th bit active/output
   while (1) {
-    gpio_toggle(GPIOB, 5);
-    for (volatile uint32_t i = 0; i < 10000; i++)
-      ;
+    gpio_toggle(GPIOB, 5); // toggle the 5th bit
+    delay();
   }
 }
